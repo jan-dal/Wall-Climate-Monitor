@@ -1,0 +1,27 @@
+{
+  "version": 3,
+  "configurePresets": [
+    {
+      "name": "default",
+      "displayName": "ESP32-S3 Hardware",
+      "generator": "Ninja",
+      "binaryDir": "build/hardware",
+      "cacheVariables": {
+        "IDF_TARGET": "esp32s3",
+        "SDKCONFIG": "build/hardware/sdkconfig",
+        "SDKCONFIG_DEFAULTS": "config/sdkconfig.common;config/sdkconfig.hardware"
+      }
+    },
+    {
+      "name": "qemu",
+      "displayName": "ESP32-S3 QEMU",
+      "generator": "Ninja",
+      "binaryDir": "build/qemu",
+      "cacheVariables": {
+        "IDF_TARGET": "esp32s3",
+        "SDKCONFIG": "build/qemu/sdkconfig",
+        "SDKCONFIG_DEFAULTS": "config/sdkconfig.common;config/sdkconfig.qemu"
+      }
+    }
+  ]
+}

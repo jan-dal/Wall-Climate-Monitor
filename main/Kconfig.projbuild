@@ -1,0 +1,27 @@
+menu "Application configuration"
+
+config APP_QEMU
+    bool "Use mocked version for simulation"
+    default n
+
+config APP_WIFI_SSID
+    string "Wi-Fi SSID"
+    default ""
+
+config APP_WIFI_PASSWORD
+    string "Wi-Fi password"
+    default ""
+
+config APP_OTA_TOKEN
+    string "OTA token"
+    default ""
+
+config APP_MDNS_DOMAIN
+    string "mDNS domain"
+    default "esp32"
+
+config APP_HTTPS_DOMAIN
+    string "Redirect https domain"
+    default ""
+
+endmenu

@@ -1,0 +1,13 @@
+#!/bin/bash
+
+read -r -s -p "OTA token: " OTA_TOKEN
+echo
+
+curl -k --fail-with-body --show-error --progress-bar \
+    --http1.1 \
+    -H "Authorization: Bearer ${OTA_TOKEN}" \
+    -H "Content-Type: application/octet-stream" \
+    -H "Expect:" \
+    --data-binary "@build/hardware/humidity-sensor.bin" \
+    "https://esp32.local/api/ota"
+
