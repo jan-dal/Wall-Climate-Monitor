@@ -1,12 +1,15 @@
 CONFIG_PARTITION_TABLE_CUSTOM=y
 CONFIG_PARTITION_TABLE_CUSTOM_FILENAME="partitions/hardware.csv"
 
+# Hostname only, without the .local suffix.
 CONFIG_APP_MDNS_DOMAIN="esp32"
-CONFIG_APP_REDIRECT_TO_HTTPS_DOMAIN=""
+# Full HTTPS origin used by the HTTP redirect server, without a trailing slash.
+CONFIG_APP_HTTPS_DOMAIN="https://esp32.local"
 
 CONFIG_APP_WIFI_SSID=""
 CONFIG_APP_WIFI_PASSWORD=""
 
-CONFIG_APP_OTA_TOKEN="Generate with `openssl rand -hex 32`"
+# Replace with the output of: openssl rand -hex 32
+CONFIG_APP_OTA_TOKEN=""
 
 CONFIG_ESP_WIFI_11KV_SUPPORT=y
